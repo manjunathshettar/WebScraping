@@ -36,11 +36,22 @@ root.title('Search in ' + engine_name + ' made by Manjunath Shettar')
 String_Entry = Entry(root)
 String_Entry.grid(row=0, column=0)
 
+#addition 11/28/18
+Entery = Entry(root)
+Entery.grid(row=1, column=2)
+
 def search():
     #gets the value from the text-field and saves it to url
     url = base_url + str(String_Entry.get())
     #forces the web browser to open the url
     webbrowser.open(url)
+    
+    #addition: 11/28/18
+    #opens the file and writes to the file given the values
+    name = str(Entery.get())
+    text_file = open("Output.txt", "w")
+    text_file.write(str(name) +" visited " +url)
+    text_file.close()
 
 
 Search_Button = Button(root, text='Go', command=search)
