@@ -42,7 +42,7 @@ def search():
     #forces the web browser to open the url
     webbrowser.open(url)
 
-#creates a button to search the value
+
 Search_Button = Button(root, text='Go', command=search)
 Search_Button.grid(row=0, column=1)
 #creates a button to quit out of the program
